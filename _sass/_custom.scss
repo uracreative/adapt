@@ -1,0 +1,405 @@
+// Smooth Scrolling
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+// Body
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  line-height: 1.6;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+// Headers
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  color: $purple-heart;
+}
+
+.h1,
+h1 {
+  font-size: 65px;
+}
+
+.h2,
+h2 {
+  font-size: 48px;
+}
+
+.h3,
+h3 {
+  font-size: 34px;
+}
+
+.h4,
+h4 {
+  font-size: 24px;
+}
+
+.h5,
+h5 {
+  font-size: 18px;
+}
+
+.h6,
+h6 {
+  font-size: 16px;
+}
+
+// Paragraphs and Custom Font Sizes
+
+p {
+  font-size: 16px;
+}
+
+.purple {
+  color: $purple-heart;
+}
+
+.hero {
+  background-image: url(/assets/images/background.png);
+  background-repeat: no-repeat;
+  background-size: 48%;
+  background-position: top right;
+
+  &-header {
+    color: $purple-heart;
+    line-height: 57.6px;
+  }
+  &-subheader {
+    color: $purple-heart;
+    font-size: 20px;
+  }
+}
+
+// Navbar
+
+.brand > path {
+  fill: $purple-heart !important;
+}
+
+.nav-link {
+  font-weight: 600;
+  color: $purple-heart !important;
+  transition: 0.25s ease-in-out;
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+
+  &:hover {
+    color: lighten($purple-heart, 10%) !important;
+  }
+}
+
+// Buttons
+
+button {
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.tab {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  width: 100%;
+  text-decoration: none;
+  border-right: 6px solid transparent;
+  color: $purple-heart;
+  opacity: 0.3;
+  margin-top: 0.85rem;
+  margin-bottom: 0.85rem;
+
+  &:first-of-type {
+    margin-top: 0.4rem;
+  }
+
+  &:hover {
+    color: $purple-heart;
+    opacity: 0.5;
+  }
+
+  &.active {
+    border-right: 6px solid $purple-heart;
+    color: $purple-heart;
+    opacity: 1;
+  }
+}
+
+.tab-pane {
+  color: $purple-heart;
+  font-size: 20px;
+}
+
+.primary-button {
+  background-color: $purple-heart;
+  color: $white !important;
+  padding: 0.75rem 1.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.25s ease-in-out;
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+
+  &:hover {
+    background-color: lighten($purple-heart, 10%);
+    color: $white !important;
+  }
+}
+
+.wide-button {
+  background-color: $purple-heart;
+  color: $white !important;
+  padding: 0.65rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.25s ease-in-out;
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+
+  &:hover {
+    background-color: lighten($purple-heart, 10%);
+    color: $white !important;
+  }
+}
+
+.outline-button {
+  background-color: transparent;
+  color: $purple-heart !important;
+  border: 1px solid $purple-heart;
+  padding: 0.75rem 1.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.25s ease-in-out;
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+
+  &:hover {
+    background-color: $purple-heart;
+    color: $white !important;
+    border: 1px solid $purple-heart;
+  }
+}
+
+.explore {
+  background-color: $purple-heart;
+  color: $white !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  border-radius: 8px;
+  transition: 0.25s ease-in-out;
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+
+  &:hover {
+    background-color: lighten($purple-heart, 10%);
+    color: $white !important;
+  }
+}
+
+// Backgrounds
+.background {
+  &-black {
+    background: $black;
+  }
+
+  &-white {
+    background: $white;
+  }
+
+  &-footer {
+    background: #f0eeff;
+  }
+}
+
+#get-involved {
+  background-color: #fdfcfe;
+  background-image: url(/assets/images/involved-background.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.border-right {
+  border-right: 2px solid rgba(62, 12, 166, 0.3);
+}
+
+// Cards
+
+.card {
+  &-content {
+    background: #fdfcfe;
+    padding: 7rem;
+    box-shadow: 0px 28px 13px -1px rgba(84, 30, 197, 0.04),
+      0px 10px 10px 1px rgba(49, 2, 147, 0.1);
+    border-radius: 8px;
+
+    & > * {
+      color: $purple-heart !important;
+    }
+  }
+  &-tool {
+    background: #fdfcfe;
+    padding: 3rem;
+    box-shadow: 0px 28px 13px -1px rgba(84, 30, 197, 0.04),
+      0px 10px 10px 1px rgba(49, 2, 147, 0.1);
+    border-radius: 8px;
+
+    & h3,
+    p {
+      color: $purple-heart !important;
+    }
+  }
+}
+
+// Markdown
+
+.md-content {
+  & p {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 25px;
+    line-height: 24px;
+  }
+
+  & a {
+    color: #000;
+    font-weight: 600;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  & img {
+    max-width: 100%;
+  }
+
+  & p img {
+    padding: 15px 0 0;
+  }
+
+  & blockquote p {
+    color: $green-900;
+  }
+
+  & .left {
+    text-align: left;
+  }
+
+  & .right {
+    text-align: right;
+  }
+
+  & .center {
+    text-align: center;
+  }
+
+  & h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #000;
+    font-weight: 700;
+    word-break: break-word;
+  }
+
+  & li {
+    list-style-position: outside;
+    margin: 0 0 20px 0px;
+    font-size: 14px;
+  }
+
+  & ul li {
+    list-style-type: disc;
+  }
+
+  & .lineno {
+    margin-right: 10px;
+  }
+
+  & code.language-plaintext.highlighter-rouge {
+    background-color: #000;
+    padding: 4px 6px;
+    border-radius: 5px;
+  }
+
+  & pre.highlight {
+    padding: 15px 10px 0px 15px;
+    background: #000;
+    border: 1px solid #000;
+    border-radius: 5px;
+  }
+
+  & img[alt$=" > "] {
+    float: right;
+    margin: 0 0 20px 20px;
+  }
+
+  & img[alt$="<"] {
+    float: left;
+    margin: 0 20px 20px 0;
+  }
+
+  & img[alt$=" > <"] {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    float: none !important;
+  }
+
+  & .mono {
+    font-family: "Mono", "Courier New", sans-serif;
+  }
+}
+
+// Footer
+
+footer {
+  color: $purple-heart;
+  font-size: 14px;
+}
+
+// Media queries
+
+@media (max-width: 991px) {
+  .explore {
+    background-color: transparent !important;
+    color: $purple-heart !important;
+    padding: 0.5rem 0rem !important;
+    border-radius: 0px;
+
+    &:hover {
+      background-color: transparent;
+      color: lighten($purple-heart, 10%) !important;
+    }
+  }
+  .card-content {
+    padding: 3rem;
+  }
+}

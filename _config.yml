@@ -1,0 +1,23 @@
+title: Adapt
+email: adapt@internews.org
+description: >-
+  Adapt is blablabla
+baseurl: ""
+url: ""
+twitter_username:
+github_username:
+
+plugins:
+  - jekyll-feed
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
