@@ -71,6 +71,10 @@ p {
   color: $purple-heart;
 }
 
+.pink {
+  color: $hot-pink;
+}
+
 .hero {
   background-image: url(/assets/images/background.png);
   background-repeat: no-repeat;
@@ -149,9 +153,28 @@ button {
   font-size: 20px;
 }
 
+.nav-pills {
+  border-bottom: 2px solid rgba(62, 12, 166, 0.3);
+}
+
+.nav-pills > .nav-link {
+  border-bottom: 6px solid transparent;
+  color: rgba(62, 12, 166, 0.3) !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  margin-bottom: -4px;
+
+  &.active {
+    border-bottom: 6px solid #541ec5;
+    color: #541ec5 !important;
+    opacity: 1;
+  }
+}
+
 .primary-button {
-  background-color: $purple-heart;
-  color: $white !important;
+  background-color: $hot-pink;
+  color: $purple-heart !important;
+  font-weight: 600;
   padding: 0.75rem 1.75rem;
   border-radius: 8px;
   text-decoration: none;
@@ -161,8 +184,8 @@ button {
   -o-transition: 0.25s ease-in-out;
 
   &:hover {
-    background-color: lighten($purple-heart, 10%);
-    color: $white !important;
+    background-color: lighten($hot-pink, 10%);
+    color: $purple-heart !important;
   }
 }
 
@@ -203,8 +226,8 @@ button {
 }
 
 .explore {
-  background-color: $purple-heart;
-  color: $white !important;
+  background-color: $hot-pink;
+  color: $purple-heart !important;
   padding-left: 1rem !important;
   padding-right: 1rem !important;
   border-radius: 8px;
@@ -214,8 +237,8 @@ button {
   -o-transition: 0.25s ease-in-out;
 
   &:hover {
-    background-color: lighten($purple-heart, 10%);
-    color: $white !important;
+    background-color: lighten($hot-pink, 10%);
+    color: $purple-heart !important;
   }
 }
 
@@ -229,13 +252,18 @@ button {
     background: $white;
   }
 
+  &-grey {
+    background: #fdfcfe;
+  }
+
   &-footer {
-    background: #f0eeff;
+    background: #3e0ca6;
   }
 }
 
 #get-involved {
-  background-color: #fdfcfe;
+  color: $hot-pink !important;
+  background-color: $purple-heart;
   background-image: url(/assets/images/involved-background.png);
   background-repeat: no-repeat;
   background-position: center;
@@ -251,6 +279,28 @@ button {
   &-content {
     background: #fdfcfe;
     padding: 7rem;
+    box-shadow: 0px 28px 13px -1px rgba(84, 30, 197, 0.04),
+      0px 10px 10px 1px rgba(49, 2, 147, 0.1);
+    border-radius: 8px;
+
+    & > * {
+      color: $purple-heart !important;
+    }
+  }
+  &-small {
+    background: #fdfcfe;
+    padding: 4rem;
+    box-shadow: 0px 28px 13px -1px rgba(84, 30, 197, 0.04),
+      0px 10px 10px 1px rgba(49, 2, 147, 0.1);
+    border-radius: 8px;
+
+    & > * {
+      color: $purple-heart !important;
+    }
+  }
+  &-smaller {
+    background: #fdfcfe;
+    padding: 3rem;
     box-shadow: 0px 28px 13px -1px rgba(84, 30, 197, 0.04),
       0px 10px 10px 1px rgba(49, 2, 147, 0.1);
     border-radius: 8px;
@@ -381,7 +431,7 @@ button {
 // Footer
 
 footer {
-  color: $purple-heart;
+  color: $hot-pink;
   font-size: 14px;
 }
 
@@ -399,7 +449,17 @@ footer {
       color: lighten($purple-heart, 10%) !important;
     }
   }
+  .hero {
+    background-size: auto;
+  }
   .card-content {
     padding: 3rem;
+  }
+  .nav-pills {
+    border-bottom: none;
+
+    & > .nav-link {
+      margin-bottom: initial;
+    }
   }
 }
