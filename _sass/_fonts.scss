@@ -1,10 +1,10 @@
 @font-face {
   font-family: "Space Grotesk";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   src: local(""),
-    url("../fonts/space-grotesk/space-grotesk-regular.woff2") format("woff2"),
-    url("../fonts/space-grotesk/space-grotesk-regular.woff") format("woff");
+    url("../fonts/space-grotesk/space-grotesk-500.woff2") format("woff2"),
+    url("../fonts/space-grotesk/space-grotesk-500.woff") format("woff");
 }
 @font-face {
   font-family: "Space Grotesk";
@@ -13,14 +13,6 @@
   src: local(""),
     url("../fonts/space-grotesk/space-grotesk-600.woff2") format("woff2"),
     url("../fonts/space-grotesk/space-grotesk-600.woff") format("woff");
-}
-@font-face {
-  font-family: "Space Grotesk";
-  font-style: normal;
-  font-weight: 500;
-  src: local(""),
-    url("../fonts/space-grotesk/space-grotesk-500.woff2") format("woff2"),
-    url("../fonts/space-grotesk/space-grotesk-500.woff") format("woff");
 }
 @font-face {
   font-family: "Space Grotesk";

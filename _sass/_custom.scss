@@ -67,12 +67,34 @@ p {
   font-size: 16px;
 }
 
+.head-font {
+  font-family: "Space Grotesk", sans-serif;
+}
+
 .purple {
   color: $purple-heart;
 }
 
 .pink {
   color: $hot-pink;
+}
+
+.no-underline {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: $purple-heart;
+    text-decoration-thickness: 2px;
+  }
+}
+
+.bio-name {
+  color: #444444;
+  text-transform: uppercase;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
 }
 
 .hero {
@@ -108,6 +130,13 @@ p {
   &:hover {
     color: lighten($purple-heart, 10%) !important;
   }
+}
+
+.highlighted {
+  background: #f3ecff;
+  border-radius: 0px 0px 8px 8px;
+  margin-top: -2.5rem;
+  padding: 3rem 1rem 1rem 1rem !important;
 }
 
 // Buttons
@@ -187,6 +216,24 @@ button {
     background-color: lighten($hot-pink, 10%);
     color: $purple-heart !important;
   }
+
+  &-wider {
+    background-color: $hot-pink;
+    color: $purple-heart !important;
+    font-weight: 600;
+    padding: 1rem 3rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.25s ease-in-out;
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+
+    &:hover {
+      background-color: lighten($hot-pink, 10%);
+      color: $purple-heart !important;
+    }
+  }
 }
 
 .wide-button {
@@ -259,6 +306,10 @@ button {
   &-footer {
     background: #3e0ca6;
   }
+
+  &-blog {
+    background: #fcfaff;
+  }
 }
 
 #get-involved {
@@ -269,12 +320,32 @@ button {
   background-position: center;
 }
 
+#blog-involve {
+  color: $hot-pink !important;
+  background-color: $purple-heart;
+  background-image: url(/assets/images/blog-background.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 #partners img {
   width: 70%;
 }
 
 .border-right {
   border-right: 2px solid rgba(62, 12, 166, 0.3);
+}
+
+.fit-image {
+  object-fit: cover;
+  height: 100% !important;
+}
+
+.blogpost-img {
+  max-height: 400px !important;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 8px;
 }
 
 // Cards
@@ -325,16 +396,40 @@ button {
       color: $purple-heart !important;
     }
   }
+  &-post {
+    background: #f2ecff;
+    border-radius: 8px;
+  }
+  &-vertical {
+    background: none;
+    border-radius: 8px;
+    padding: 3rem 2.5rem;
+    transition: 0.25s ease-in-out;
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+
+    &:hover {
+      background: #f3ecff;
+    }
+  }
+  &-info {
+    background: #f2ecff;
+    border-radius: 8px;
+    padding: 2rem 4rem;
+    margin-top: -12rem;
+    margin-bottom: 3rem;
+  }
 }
 
 // Markdown
 
 .md-content {
   & p {
-    font-size: 16px;
+    font-size: 20px;
     color: #000;
     margin-bottom: 25px;
-    line-height: 24px;
+    line-height: 35px;
   }
 
   & a {
@@ -379,6 +474,7 @@ button {
   h6 {
     color: #000;
     font-weight: 700;
+    font-family: "Space Grotesk", sans-serif;
     word-break: break-word;
   }
 
@@ -465,5 +561,15 @@ footer {
     & > .nav-link {
       margin-bottom: initial;
     }
+  }
+  .card-info {
+    margin-top: 0rem;
+    padding: 1.5rem 2rem;
+  }
+  .highlighted {
+    background: none;
+    border-radius: none;
+    margin-top: 0;
+    padding: 0.5rem 0 !important;
   }
 }

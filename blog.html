@@ -1,4 +1,153 @@
 ---
-layout: default
+layout: page
 title: Blog
 ---
+
+<header class="background-blog">
+    <div class="container-fluid py-5">
+
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <h2>Blog</h2>
+            </div>
+        </div>
+
+        <div id="posts" class="container py-5">
+
+            <div class="card-post">
+                <div class="row">
+                
+                    {% assign items = site.posts | sort: "date" | reverse %}
+
+                    {% for item in items limit:1 %}
+                    {% if item.excerpt %}
+                    {% assign excerpt = item.excerpt %}
+                    {% else %}
+                    {% assign excerpt = item.content %}
+                    {% endif %}
+                    {% assign author = site.data.authors[item.author] %}
+
+                    <div class="col-xl-6 col-lg-12">
+                        <a href="{{ site.baseurl }}{{ item.url | replace: '.html', ''  }}">
+                            <img class="img-fluid fit-image"
+                            src="{{ site.baseurl_root }}/assets/images/uploads/{{ item.image }}"
+                            alt="{{ item.title }}" />
+                        </a>
+                    </div>
+
+                    <div class="col-12 col-xl-5 col-lg-12 px-5 px-lg-4 py-4 purple">
+                        {% assign words = item.content | number_of_words %}
+                        {% if words < 360 %} 
+                            <span class="head-font">1 minute read /</span>
+                        {% else %}
+                            <span class="head-font">{{ words | divided_by:150 }} minute read /</span>
+                        {% endif %}
+
+                        <span class="mb-3 fw-bold head-font">{{ item.date | date: "%b %-d %Y"}}</span>
+                        <a class="no-underline" href="{{ site.baseurl }}{{ item.url | replace: '.html', ''  }}"><h3 class="mt-3">{{ item.title }}</h3></a>
+                        <p class="mb-4">{{ excerpt | strip_html | truncatewords: 60 }}</p>
+
+                        <img class="rounded me-2" src="{{ site.baseurl_root }}/assets/images/uploads/{{ author.image }}" width="50px" height="50px" />
+                        <span class="fw-bold head-font">{{ author.name }}</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+</header>
+
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="row">
+            
+            {% for item in items offset:1 limit:3 %}
+            {% if item.excerpt %}
+            {% assign excerpt = item.excerpt %}
+            {% else %}
+            {% assign excerpt = item.content %}
+            {% endif %}
+            {% assign author = site.data.authors[item.author] %}
+
+            <div class="col-xl-4 col-lg-6 col-md-12">
+
+                <div class="card-vertical">
+                    <a href="{{ site.baseurl }}{{ item.url | replace: '.html', ''  }}">
+                        <img class="img-fluid fit-image mb-3"
+                        src="{{ site.baseurl_root }}/assets/images/uploads/{{ item.image }}"
+                        alt="{{ item.title }}" />
+                    </a>
+
+                    {% assign words = item.content | number_of_words %}
+                    {% if words < 360 %} 
+                        <span class="head-font purple">1 minute read /</span>
+                    {% else %}
+                        <span class="head-font purple">{{ words | divided_by:150 }} minute read /</span>
+                    {% endif %}
+
+                    <span class="mb-3 fw-bold head-font purple">{{ item.date | date: "%b %-d %Y"}}</span>
+                    <a class="no-underline" href="{{ site.baseurl }}{{ item.url | replace: '.html', ''  }}"><h4 class="mt-3">{{ item.title }}</h4></a>
+                    <p class="mb-4">{{ excerpt | strip_html | truncatewords: 60 }}</p>
+
+                    <img class="rounded me-2" src="{{ site.baseurl_root }}/assets/images/uploads/{{ author.image }}" width="30px" height="30px" />
+                    <span class="fw-bold head-font purple">{{ author.name }}</span>
+
+                </div>
+            </div>
+
+            {% endfor %}
+
+            <div id="blog-involve" class="row mx-0 my-5 py-5 px-5 align-items-center justify-content-center">
+                <div class="col-xl-8 col-lg-8 col-md-12">
+                    <h3 class="pink fw-normal">Get involved</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor viverra et venenatis pharetra. Mollis orci, non duis praesent ut.</p>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-12 d-flex align-items-center justify-content-center">
+                    <a href="/explore" class="primary-button-wider" title="Call to Action">Call to Action</a>
+                </div>
+            </div>
+
+            {% for item in items offset:4 %}
+            {% if item.excerpt %}
+            {% assign excerpt = item.excerpt %}
+            {% else %}
+            {% assign excerpt = item.content %}
+            {% endif %}
+            {% assign author = site.data.authors[item.author] %}
+
+            <div class="col-xl-4 col-lg-6 col-md-12">
+
+                <div class="card-vertical">
+                    <a href="{{ site.baseurl }}{{ item.url | replace: '.html', ''  }}">
+                        <img class="img-fluid fit-image mb-3"
+                        src="{{ site.baseurl_root }}/assets/images/uploads/{{ item.image }}"
+                        alt="{{ item.title }}" />
+                    </a>
+
+                    {% assign words = item.content | number_of_words %}
+                    {% if words < 360 %} 
+                        <span class="head-font purple">1 minute read /</span>
+                    {% else %}
+                        <span class="head-font purple">{{ words | divided_by:150 }} minute read /</span>
+                    {% endif %}
+
+                    <span class="mb-3 fw-bold head-font purple">{{ item.date | date: "%b %-d %Y"}}</span>
+                    <a class="no-underline" href="{{ site.baseurl }}{{ item.url | replace: '.html', ''  }}"><h4 class="mt-3">{{ item.title }}</h4></a>
+                    <p class="mb-4">{{ excerpt | strip_html | truncatewords: 60 }}</p>
+
+                    <img class="rounded me-2" src="{{ site.baseurl_root }}/assets/images/uploads/{{ author.image }}" width="30px" height="30px" />
+                    <span class="fw-bold head-font purple">{{ author.name }}</span>
+
+                </div>
+            </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
